@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.261" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.jdsb.cfc.MCadastroClienteFornecController">
+  <children>
+
+    <MenuBar VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="false" text="File">
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#navegarAteCadastroBanco" text="Cadastro Banco" />
+            <MenuItem mnemonicParsing="false" onAction="#navegarAteCadastroCliente" text="Cadastro Fornecedor / Cliente" />
+            <MenuItem mnemonicParsing="false" text="Open…" />
+            <Menu mnemonicParsing="false" text="Open Recent" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Close" />
+            <MenuItem mnemonicParsing="false" text="Save" />
+            <MenuItem mnemonicParsing="false" text="Save As…" />
+            <MenuItem mnemonicParsing="false" text="Revert" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Preferences…" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Quit" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Edit">
+          <items>
+            <MenuItem mnemonicParsing="false" text="Undo" />
+            <MenuItem mnemonicParsing="false" text="Redo" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Cut" />
+            <MenuItem mnemonicParsing="false" text="Copy" />
+            <MenuItem mnemonicParsing="false" text="Paste" />
+            <MenuItem mnemonicParsing="false" text="Delete" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Select All" />
+            <MenuItem mnemonicParsing="false" text="Unselect All" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Help">
+          <items>
+            <MenuItem mnemonicParsing="false" text="About MyHelloApp" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+         <children>
+            <Label layoutX="15.0" layoutY="2.0" prefHeight="27.0" prefWidth="395.0" text="Cadastro de Cliente/Fornecedor">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <ChoiceBox fx:id="tpClinteFornec" layoutX="14.0" layoutY="47.0" prefWidth="150.0" />
+            <Label layoutX="15.0" layoutY="29.0" prefHeight="17.0" prefWidth="53.0" text="Tipo" />
+            <TextField fx:id="nmClienteForne" layoutX="170.0" layoutY="47.0" prefHeight="25.0" prefWidth="522.0" />
+            <Label layoutX="171.0" layoutY="30.0" prefHeight="17.0" prefWidth="53.0" text="Nome" />
+            <Label layoutX="697.0" layoutY="29.0" prefHeight="17.0" prefWidth="69.0" text="CPF/CNPJ" />
+            <TextField fx:id="cpfCnpj" layoutX="697.0" layoutY="47.0" prefHeight="25.0" prefWidth="188.0" />
+            <TextField fx:id="dsCelular" layoutX="14.0" layoutY="93.0" prefHeight="25.0" prefWidth="236.0" />
+            <Label layoutX="15.0" layoutY="77.0" prefHeight="17.0" prefWidth="53.0" text="Celular" />
+            <TextField fx:id="dsTelFixo" layoutX="256.0" layoutY="93.0" prefHeight="25.0" prefWidth="236.0" />
+            <Label layoutX="257.0" layoutY="77.0" prefHeight="17.0" prefWidth="53.0" text="Tel. Fixo" />
+            <TextField fx:id="dsEmail" layoutX="497.0" layoutY="93.0" prefHeight="25.0" prefWidth="388.0" />
+            <Label layoutX="498.0" layoutY="77.0" prefHeight="17.0" prefWidth="53.0" text="E-mail" />
+            <TableView fx:id="tblcClineteFornec" layoutX="15.0" layoutY="170.0" prefHeight="465.0" prefWidth="871.0">
+              <columns>
+                <TableColumn fx:id="tbcTpClienteFornec" prefWidth="115.0" text="Tipo" />
+                <TableColumn fx:id="tbcNmClienteFornec" minWidth="0.0" prefWidth="439.0" text="Nome" />
+                  <TableColumn fx:id="tbcDsObservacao" minWidth="0.0" prefWidth="315.0" text="Observações" />
+              </columns>
+            </TableView>
+            <Button layoutX="789.0" layoutY="642.0" mnemonicParsing="false" onAction="#salvar" prefHeight="25.0" prefWidth="96.0" text="Salvar" />
+            <Button layoutX="686.0" layoutY="642.0" mnemonicParsing="false" onAction="#cancelar" prefHeight="25.0" prefWidth="96.0" text="Cancelar" />
+            <Button layoutX="582.0" layoutY="642.0" mnemonicParsing="false" onAction="#remover" prefHeight="25.0" prefWidth="96.0" text="Remover" />
+            <Label fx:id="lbMsg" layoutX="15.0" layoutY="641.0" prefHeight="21.0" prefWidth="411.0">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="15.0" layoutY="123.0" prefHeight="17.0" prefWidth="80.0" text="Observações" />
+            <TextField fx:id="dsObservacao" layoutX="15.0" layoutY="140.0" prefHeight="25.0" prefWidth="871.0" />
+         </children>
+    </AnchorPane>
+  </children>
+</VBox>
