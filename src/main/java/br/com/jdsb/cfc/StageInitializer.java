@@ -26,6 +26,15 @@ public class StageInitializer implements ApplicationListener<StageReadlyEvent> {
 	@Value("classpath:/m_cadastro_cliente_fornec.fxml")
 	private Resource mCadastroClienteFornec;
 
+	@Value("classpath:/m_cadastro_receita.fxml")
+	private Resource mCadastroReceita;
+
+	@Value("classpath:/m_cadastro_despesa.fxml")
+	private Resource mCadastroDespesa;
+
+	@Value("classpath:/m_cadastro_centro_custo.fxml")
+	private Resource mCadastroCentroCusto;
+
 	private Map<String, Resource> mapa = new HashMap<>();
 
 	@Autowired
@@ -35,6 +44,9 @@ public class StageInitializer implements ApplicationListener<StageReadlyEvent> {
 	public void onApplicationEvent(StageReadlyEvent event) {
 		mapa.put("m_cadastro_banco", resource);
 		mapa.put("m_cadastro_cliente_fornec", mCadastroClienteFornec);
+		mapa.put("m_cadastro_receita", mCadastroReceita);
+		mapa.put("m_cadastro_despesa", mCadastroDespesa);
+		mapa.put("m_cadastro_centro_custo", mCadastroCentroCusto);
 
 		Stage stage = event.getStage();
 		try {
