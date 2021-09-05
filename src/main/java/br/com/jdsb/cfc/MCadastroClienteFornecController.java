@@ -17,7 +17,9 @@ public class MCadastroClienteFornecController extends AbstractController {
 	@Override
 	public void inicializar() {
 		ObservableList<String> optionClientFornedor = FXCollections.observableArrayList("Cliente","Fornecedor");
-		tpClinteFornec.setItems(optionClientFornedor);;
+		tpClinteFornec.setItems(optionClientFornedor);
+		tpClinteFornec.setValue("Cliente");
+	    carregarDados();
 
 	}
 
@@ -66,11 +68,19 @@ public class MCadastroClienteFornecController extends AbstractController {
 
 	@FXML
 	void remover(ActionEvent event) {
-
+		if(clientFornecedorSelecionado==null){
+			mensagem("Para Remover é necessário Selecionar um Registro!");
+		}
 	}
 
 	public void limpar(){
-
+		dsCelular.setText("");
+		cpfCnpj.setText("");
+		dsEmail.setText("");
+		dsTelFixo.setText("");
+		nmClienteForne.setText("");
+		dsObservacao.setText("");
+		tpClinteFornec.setValue("Cliente");
 	}
 
 	@FXML
@@ -86,6 +96,8 @@ public class MCadastroClienteFornecController extends AbstractController {
     	   clientFornecedorSelecionado.setDsObservacao(dsObservacao.getText());
     	   this.service.getClientFornecDao().save(clientFornecedorSelecionado);
     	   mensagem("Registro Salvo com Sucesso!");
+    	   carregarDados();
+    	   limpar();
        }else{
     	   clientFornecedorSelecionado.setDsCelular(dsCelular.getText());
     	   clientFornecedorSelecionado.setDsCpfCnpj(cpfCnpj.getText());
@@ -96,6 +108,8 @@ public class MCadastroClienteFornecController extends AbstractController {
     	   clientFornecedorSelecionado.setDsObservacao(dsObservacao.getText());
     	   this.service.getClientFornecDao().save(clientFornecedorSelecionado);
     	   mensagem("Registro Atualizado com Sucesso!");
+    	   carregarDados();
+    	   limpar();
        }
 	}
 
@@ -112,7 +126,7 @@ public class MCadastroClienteFornecController extends AbstractController {
 		tbcDsObservacao
 		.setCellValueFactory(new PropertyValueFactory<ClienteFornecedor, String>("dsObservacao"));
 
-		tblBanco.setItems(populateTableBanco);
+		tblcClineteFornec.setItems(populateTableBanco);
 
 
 	}
