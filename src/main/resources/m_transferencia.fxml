@@ -66,12 +66,12 @@
             </Label>
             <DatePicker layoutX="14.0" layoutY="42.0" />
             <Label layoutX="14.0" layoutY="24.0" prefHeight="17.0" prefWidth="46.0" text="Data" />
-            <ChoiceBox layoutX="194.0" layoutY="42.0" prefHeight="25.0" prefWidth="227.0" />
+            <ChoiceBox layoutX="194.0" layoutY="42.0" prefHeight="25.0" prefWidth="190.0" />
             <Label layoutX="194.0" layoutY="24.0" prefHeight="17.0" prefWidth="105.0" text="Banco Origem" />
-            <ChoiceBox layoutX="428.0" layoutY="42.0" prefHeight="25.0" prefWidth="227.0" />
-            <Label layoutX="428.0" layoutY="24.0" prefHeight="17.0" prefWidth="105.0" text="Para" />
-            <Label layoutX="660.0" layoutY="24.0" prefHeight="17.0" prefWidth="105.0" text="Valor" />
-            <TextField layoutX="661.0" layoutY="42.0" prefHeight="25.0" prefWidth="227.0" />
+            <ChoiceBox layoutX="551.0" layoutY="43.0" prefHeight="25.0" prefWidth="165.0" />
+            <Label layoutX="553.0" layoutY="24.0" prefHeight="17.0" prefWidth="105.0" text="Para" />
+            <Label layoutX="723.0" layoutY="26.0" prefHeight="17.0" prefWidth="105.0" text="Valor" />
+            <TextField layoutX="722.0" layoutY="43.0" prefHeight="25.0" prefWidth="165.0" />
             <TextField layoutX="14.0" layoutY="89.0" prefHeight="25.0" prefWidth="641.0" />
             <Label layoutX="14.0" layoutY="71.0" prefHeight="17.0" prefWidth="105.0" text="Nome" />
             <ChoiceBox layoutX="661.0" layoutY="89.0" prefHeight="25.0" prefWidth="227.0" />
@@ -95,6 +95,8 @@
             <Button layoutX="789.0" layoutY="642.0" mnemonicParsing="false" onAction="#salvar" prefHeight="25.0" prefWidth="96.0" text="Salvar" />
             <Button layoutX="688.0" layoutY="642.0" mnemonicParsing="false" onAction="#cancelar" prefHeight="25.0" prefWidth="96.0" text="Cancelar" />
             <Button layoutX="587.0" layoutY="642.0" mnemonicParsing="false" onAction="#remover" prefHeight="25.0" prefWidth="96.0" text="Remover" />
+            <Label layoutX="391.0" layoutY="23.0" prefHeight="17.0" prefWidth="105.0" text="Saldo" />
+            <TextField layoutX="390.0" layoutY="43.0" prefHeight="25.0" prefWidth="155.0" />
          </children>
     </AnchorPane>
   </children>
