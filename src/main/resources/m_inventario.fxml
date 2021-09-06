@@ -16,7 +16,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.261" xmlns:fx="http://javafx.com/fxml/1">
+<VBox prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.261" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.jdsb.controladores.inventario.MInventario">
   <children>
     <MenuBar VBox.vgrow="NEVER">
       <menus>
@@ -64,21 +64,21 @@
                   <Font name="System Bold" size="18.0" />
                </font>
             </Label>
-            <DatePicker layoutX="14.0" layoutY="42.0" />
+            <DatePicker fx:id="dtInventario" layoutX="14.0" layoutY="42.0" />
             <Label layoutX="14.0" layoutY="24.0" prefHeight="17.0" prefWidth="46.0" text="Data" />
-            <ChoiceBox layoutX="194.0" layoutY="42.0" prefHeight="25.0" prefWidth="190.0" />
+            <ChoiceBox fx:id="tpBanco" layoutX="194.0" layoutY="42.0" prefHeight="25.0" prefWidth="190.0" />
             <Label layoutX="194.0" layoutY="24.0" prefHeight="17.0" prefWidth="105.0" text="Banco" />
             <Label layoutX="553.0" layoutY="26.0" prefHeight="17.0" prefWidth="105.0" text="Novo Saldo" />
-            <TextField layoutX="552.0" layoutY="43.0" prefHeight="25.0" prefWidth="165.0" />
+            <TextField fx:id="vlNovoSaldo" layoutX="552.0" layoutY="43.0" prefHeight="25.0" prefWidth="165.0" />
             <Label layoutX="15.0" layoutY="73.0" prefHeight="17.0" prefWidth="105.0" text="Observações" />
-            <TextArea layoutX="14.0" layoutY="90.0" prefHeight="46.0" prefWidth="874.0" />
-            <TableView layoutX="14.0" layoutY="149.0" prefHeight="483.0" prefWidth="874.0">
+            <TextArea fx:id="dsObvservacao" layoutX="14.0" layoutY="90.0" prefHeight="46.0" prefWidth="874.0" />
+            <TableView fx:id="tblInventario" layoutX="14.0" layoutY="149.0" prefHeight="483.0" prefWidth="874.0">
               <columns>
-                <TableColumn prefWidth="237.0" text="Banco" />
-                  <TableColumn prefWidth="171.0" text="Data" />
-                  <TableColumn prefWidth="122.0" text="Saldo Anterior" />
-                  <TableColumn prefWidth="129.0" text="Novo Saldo" />
-                  <TableColumn prefWidth="213.0" text="Observações" />
+                <TableColumn fx:id="tbcBanco" prefWidth="237.0" text="Banco" />
+                  <TableColumn fx:id="tncDtInventario" prefWidth="171.0" text="Data" />
+                  <TableColumn fx:id="tbcVlSaldoAnterior" prefWidth="122.0" text="Saldo Anterior" />
+                  <TableColumn fx:id="tbcVlNovoSaldo" prefWidth="129.0" text="Novo Saldo" />
+                  <TableColumn fx:id="tbcDsObservacao" prefWidth="213.0" text="Observações" />
               </columns>
             </TableView>
             <Label fx:id="lbMsg" layoutX="15.0" layoutY="639.0" prefHeight="21.0" prefWidth="411.0">
@@ -90,7 +90,7 @@
             <Button layoutX="688.0" layoutY="642.0" mnemonicParsing="false" onAction="#cancelar" prefHeight="25.0" prefWidth="96.0" text="Cancelar" />
             <Button layoutX="587.0" layoutY="642.0" mnemonicParsing="false" onAction="#remover" prefHeight="25.0" prefWidth="96.0" text="Remover" />
             <Label layoutX="391.0" layoutY="23.0" prefHeight="17.0" prefWidth="105.0" text="Saldo Atual" />
-            <TextField layoutX="390.0" layoutY="43.0" prefHeight="25.0" prefWidth="155.0" />
+            <TextField fx:id="vlSaldoAtual" layoutX="390.0" layoutY="43.0" prefHeight="25.0" prefWidth="155.0" />
             <Button layoutX="488.0" layoutY="642.0" mnemonicParsing="false" onAction="#imprimir" prefHeight="25.0" prefWidth="96.0" text="Imprimir" />
          </children>
     </AnchorPane>

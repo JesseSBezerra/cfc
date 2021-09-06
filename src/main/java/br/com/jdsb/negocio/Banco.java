@@ -1,5 +1,7 @@
 package br.com.jdsb.negocio;
 
+import java.math.BigDecimal;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -21,6 +23,9 @@ public class Banco {
 
 	@Column(name="NM_BANCO")
 	private String nmBanco;
+
+	@Column(name="VL_SALDO_ATUAL")
+	private BigDecimal vlSaldoAtual;
 
 
 	public Long getCdBanco() {
@@ -46,10 +51,13 @@ public class Banco {
 		this.dsCodigoBanco = dsCodigoBanco;
 	}
 
+	public BigDecimal getVlSaldoAtual() {
+		return vlSaldoAtual;
+	}
 
-
-
-
+	public void setVlSaldoAtual(BigDecimal vlSaldoAtual) {
+		this.vlSaldoAtual = vlSaldoAtual;
+	}
 
 
 

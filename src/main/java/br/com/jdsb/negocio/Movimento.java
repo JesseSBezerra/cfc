@@ -41,6 +41,9 @@ public class Movimento {
 	@JoinColumn(name = "CD_BANCO_DESTINO")
 	private Banco bancoDestino;
 
+	@Column(name="VL_SALDO_ANTERIOR")
+	private BigDecimal vlSaldoAnterior;
+
 	@Column(name="VL_MOVIMENTO")
 	private BigDecimal vlMovimento;
 
@@ -109,7 +112,13 @@ public class Movimento {
 		this.vlMovimento = vlMovimento;
 	}
 
+	public BigDecimal getVlSaldoAnterior() {
+		return vlSaldoAnterior;
+	}
 
+	public void setVlSaldoAnterior(BigDecimal vlSaldoAnterior) {
+		this.vlSaldoAnterior = vlSaldoAnterior;
+	}
 
 
 
