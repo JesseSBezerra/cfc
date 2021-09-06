@@ -2,6 +2,8 @@ package br.com.jdsb.negocio.menu;
 
 import java.util.Map;
 
+import javax.sql.DataSource;
+
 import org.springframework.core.io.Resource;
 
 import br.com.jdsb.cfc.AbstractController;
@@ -14,12 +16,12 @@ import javafx.stage.Stage;
 public class NavegarAteImplements implements NavegarAte{
 
 	@Override
-	public void navegarAte(Map<String, Resource> mapa,NegocioService service,String formulario) {
+	public void navegarAte(Map<String, Resource> mapa,NegocioService service,String formulario,DataSource dataSource, String nmRelatorio) {
 			try {
 				FXMLLoader fxmlLoader = new FXMLLoader(mapa.get(formulario).getURL());
 				Parent root1 = (Parent) fxmlLoader.load();
 				AbstractController controller = fxmlLoader.getController();
-				controller.carregar(service,mapa,formulario);
+				controller.carregar(service,mapa,formulario,dataSource,nmRelatorio);
 				Stage stage = new Stage();
 				stage.setResizable(false);
 				Scene scene = stage.getScene();

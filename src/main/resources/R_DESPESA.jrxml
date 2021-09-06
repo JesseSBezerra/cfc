@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.9.0.final using JasperReports Library version 6.9.0-cb8f9004be492ccc537180b49c026951f4220bf3  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="R_DESPESA" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7bd97344-1253-4d64-938d-0990339b522d">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="MysqlCFC"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT * FROM DESPESA ORDER BY DS_DESPESA]]>
+	</queryString>
+	<field name="CD_DESPESA" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.label" value="CD_DESPESA"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="DESPESA"/>
+	</field>
+	<field name="DS_DESPESA" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="DS_DESPESA"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="DESPESA"/>
+	</field>
+	<field name="TP_DESPESA" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="TP_DESPESA"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="DESPESA"/>
+	</field>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="72">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="-20" width="595" height="92" backcolor="#006699" uuid="0d994055-9e3e-406d-9422-8ac5d7ecd84e"/>
+				<staticText>
+					<reportElement x="20" y="20" width="234" height="43" forecolor="#FFFFFF" uuid="fbce5bf7-f338-4fec-acf5-267c8558b858"/>
+					<textElement>
+						<font size="34" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Despesas]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="270" y="43" width="305" height="20" forecolor="#FFFFFF" uuid="ff5d35e4-15b4-4762-9658-651af855f9d4"/>
+					<textElement textAlignment="Right">
+						<font size="14" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Relação de Despesas Cadastradas]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="13"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="21">
+			<line>
+				<reportElement x="-20" y="20" width="595" height="1" forecolor="#666666" uuid="d89aa788-307b-40d4-ab3d-d1aab0044ab0"/>
+			</line>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="185" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="428ff5d7-8b55-4926-b286-e9586660b0a5">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3c03f039-8ea5-49af-9d6d-e5faa068d399"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Código]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="185" y="0" width="185" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="4bc13854-e6a4-4dad-a17b-e159dd9d8220">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="740ea883-ec91-4601-9d6f-6ac41a2c5929"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tipo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="370" y="0" width="185" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="f56ebb22-691b-42d5-addc-7e3bc07a5433">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d239e276-c6c2-4d13-b1be-ec65d0943042"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Descrição]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="19" width="555" height="1" uuid="72c3ff2e-a672-4a7d-b3b9-d93c58988332"/>
+			</line>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="0" width="185" height="20" uuid="8f9bfdc7-fd34-4332-be3d-c9b9725cb5bb">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3c03f039-8ea5-49af-9d6d-e5faa068d399"/>
+				</reportElement>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CD_DESPESA}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="185" y="0" width="185" height="20" uuid="db59a01a-ee52-402e-b26f-3cd8e2ee4dea">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="740ea883-ec91-4601-9d6f-6ac41a2c5929"/>
+				</reportElement>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TP_DESPESA}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="370" y="0" width="185" height="20" uuid="8b273928-b5eb-40b9-b3cb-a46b5970a6e1">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d239e276-c6c2-4d13-b1be-ec65d0943042"/>
+				</reportElement>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{DS_DESPESA}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="17">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6" uuid="9db90c99-58e1-4d16-b276-6b0e68613c6f"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6" uuid="7710ded7-a52c-4e1d-9112-ca84a96c45dc"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="4" width="100" height="13" uuid="41d71057-7776-403a-9be1-b761785bb3f2"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>

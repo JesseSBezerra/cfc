@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.9.0.final using JasperReports Library version 6.9.0-cb8f9004be492ccc537180b49c026951f4220bf3  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="R_CENTRO_CUSTO" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1713cbf2-5d92-40cc-baae-9b76ba13ef7b">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="MysqlCFC"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT * FROM CENTRO_CUSTO]]>
+	</queryString>
+	<field name="CD_CENTRO_CUSTO" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.label" value="CD_CENTRO_CUSTO"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="CENTRO_CUSTO"/>
+	</field>
+	<field name="DS_CENTRO_CUSTO" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="DS_CENTRO_CUSTO"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="CENTRO_CUSTO"/>
+	</field>
+	<field name="SN_ATIVO" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="SN_ATIVO"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="CENTRO_CUSTO"/>
+	</field>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="72">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="-20" width="595" height="92" backcolor="#006699" uuid="4c759f53-97d3-4960-8c2d-67fb59542e0e"/>
+				<staticText>
+					<reportElement x="20" y="20" width="290" height="43" forecolor="#FFFFFF" uuid="a52ca55b-8103-4632-8d21-870b72d9b39a"/>
+					<textElement>
+						<font size="34" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Centros de Custo]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="320" y="43" width="255" height="20" forecolor="#FFFFFF" uuid="f10e2adb-e605-47f8-9ed5-002057c023e0"/>
+					<textElement textAlignment="Right">
+						<font size="14" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Relação de Centros de Custo]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="13"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="21">
+			<line>
+				<reportElement x="-20" y="20" width="595" height="1" forecolor="#666666" uuid="0088d3b4-e13d-40ae-bffc-8db19c2741c7"/>
+			</line>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="185" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="2f970dcf-8b53-4ef1-887e-6bf9307f430b">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="547dd21b-08bc-4799-9ebf-84e9699efb51"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Código]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="185" y="0" width="185" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="1dd63582-2eae-409b-a168-7c5c271ba966">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7a106cf9-dc34-434b-94a7-dfee80375d99"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Descrição]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="370" y="0" width="185" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="68fd311e-b2ae-4ac2-b04a-c986abfb34f1">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2195c6c9-9634-4568-928b-46563fe4a946"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ativo]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="19" width="555" height="1" uuid="5c2b0844-b722-4c9f-a41c-4ef8a3995250"/>
+			</line>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="0" width="185" height="20" uuid="4339a9c6-f609-4790-826e-217e7b7a9a9a">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="547dd21b-08bc-4799-9ebf-84e9699efb51"/>
+				</reportElement>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CD_CENTRO_CUSTO}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="185" y="0" width="185" height="20" uuid="a520a45c-7ef8-451f-b10b-d3b594bd685e">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7a106cf9-dc34-434b-94a7-dfee80375d99"/>
+				</reportElement>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{DS_CENTRO_CUSTO}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="370" y="0" width="185" height="20" uuid="de1508d1-a4e7-4176-bba9-78bc54e89525">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2195c6c9-9634-4568-928b-46563fe4a946"/>
+				</reportElement>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{SN_ATIVO}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="17">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6" uuid="439f7322-0a38-4835-889a-033f28ed2803"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6" uuid="165eb101-a513-4ead-85cf-5279e9dd31ed"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="4" width="100" height="13" uuid="089cb865-5f6f-4a1f-8765-9a9526585682"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>

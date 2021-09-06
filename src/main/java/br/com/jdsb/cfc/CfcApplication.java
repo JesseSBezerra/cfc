@@ -8,7 +8,9 @@ import javafx.application.Application;
 public class CfcApplication {
 
 	public static void main(String[] args) {
+		System.setProperty("java.awt.headless", "false");
 		Application.launch(Main.class, args);
 	}
+
 
 }

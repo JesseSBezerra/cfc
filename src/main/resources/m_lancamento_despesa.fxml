@@ -102,6 +102,7 @@
             <Label layoutX="15.0" layoutY="70.0" prefHeight="17.0" prefWidth="133.0" text="Centro de Custo" />
             <ChoiceBox layoutX="210.0" layoutY="87.0" prefHeight="25.0" prefWidth="190.0" />
             <Label layoutX="210.0" layoutY="69.0" prefHeight="17.0" prefWidth="133.0" text="Fornecedor" />
+            <Button layoutX="611.0" layoutY="642.0" mnemonicParsing="false" onAction="#imprimir" prefHeight="25.0" prefWidth="96.0" text="Imprimir" />
          </children>
     </AnchorPane>
   </children>

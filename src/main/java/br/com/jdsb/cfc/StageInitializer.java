@@ -3,6 +3,8 @@ package br.com.jdsb.cfc;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.sql.DataSource;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -35,6 +37,24 @@ public class StageInitializer implements ApplicationListener<StageReadlyEvent> {
 	@Value("classpath:/m_cadastro_centro_custo.fxml")
 	private Resource mCadastroCentroCusto;
 
+	@Value("classpath:/R_RECEITA.jasper")
+	private Resource RReceita;
+
+	@Value("classpath:/R_BANCO.jasper")
+	private Resource RBanco;
+
+	@Value("classpath:/R_DESPESA.jasper")
+	private Resource RDespesa;
+
+	@Value("classpath:/R_CENTRO_CUSTO.jasper")
+	private Resource RCentroCusto;
+
+	@Value("classpath:/R_CLIENTE_FORNECEDOR.jasper")
+	private Resource RClicenteFornecedor;
+
+	@Autowired
+	private DataSource dataSource;
+
 	private Map<String, Resource> mapa = new HashMap<>();
 
 	@Autowired
@@ -47,13 +67,18 @@ public class StageInitializer implements ApplicationListener<StageReadlyEvent> {
 		mapa.put("m_cadastro_receita", mCadastroReceita);
 		mapa.put("m_cadastro_despesa", mCadastroDespesa);
 		mapa.put("m_cadastro_centro_custo", mCadastroCentroCusto);
+		mapa.put("R_RECEITA", RReceita);
+		mapa.put("R_BANCO", RBanco);
+		mapa.put("R_DESPESA", RDespesa);
+		mapa.put("R_CENTRO_CUSTO", RCentroCusto);
+		mapa.put("R_CLIENTE_FORNECEDOR", RClicenteFornecedor);
 
 		Stage stage = event.getStage();
 		try {
 			FXMLLoader fxmlLoader = new FXMLLoader(mapa.get("m_cadastro_banco").getURL());
 			Parent parent = fxmlLoader.load();
 			AbstractController abstractController = fxmlLoader.getController();
-			abstractController.carregar(service,mapa,null);
+			abstractController.carregar(service,mapa,null,dataSource,"R_BANCO");
 			Scene scene = stage.getScene();
 			scene = new Scene(parent, 900, 700);
 		//	stage.getIcons().add(new Image(resourceImage.getURL().toString()));
@@ -65,6 +90,7 @@ public class StageInitializer implements ApplicationListener<StageReadlyEvent> {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+
 	}
 
 

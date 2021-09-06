@@ -4,12 +4,14 @@ import java.net.URL;
 import java.util.Map;
 import java.util.ResourceBundle;
 
+import javax.sql.DataSource;
+
 import org.springframework.core.io.Resource;
 import org.springframework.data.repository.CrudRepository;
 
-import br.com.jdsb.negocio.Despesa;
 import br.com.jdsb.negocio.menu.NavegarAte;
 import br.com.jdsb.negocio.menu.NavegarAteImplements;
+import br.com.jdsb.negocio.relatorio.RelatorioController;
 import br.com.jdsb.negocio.service.NegocioService;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -35,6 +37,8 @@ public abstract class AbstractController<T> implements Initializable {
 
 	public NegocioService service;
 	public Map<String, Resource> mapa;
+	public DataSource dataSource;
+	public String nmRelatorio;
 
 	public T objetoSelecionado;
 	public CrudRepository<T, Long> crud;
@@ -43,6 +47,14 @@ public abstract class AbstractController<T> implements Initializable {
 		this.service = service;
 		this.mapa = mapa;
 		inicializar();
+	}
+
+	public void carregar(NegocioService service, Map<String, Resource> mapa,String formulario,DataSource dataSource,String nmRelatorio) {
+		this.service = service;
+		this.mapa = mapa;
+		inicializar();
+		this.dataSource = dataSource;
+		this.nmRelatorio = nmRelatorio;
 	}
 
 	public void carregar(NegocioService service) {
@@ -65,6 +77,11 @@ public abstract class AbstractController<T> implements Initializable {
 	}
 
 	@FXML
+	public void imprimir(ActionEvent event) {
+      imprimir();
+	}
+
+	@FXML
 	public void remover(ActionEvent event) {
 		if(objetoSelecionado!=null){
     		crud.delete(objetoSelecionado);
@@ -78,27 +95,27 @@ public abstract class AbstractController<T> implements Initializable {
 
 	public void navegarAteCadastroCliente() {
 		NavegarAte ate = new NavegarAteImplements();
-		ate.navegarAte(mapa, service,"m_cadastro_cliente_fornec");
+		ate.navegarAte(mapa, service,"m_cadastro_cliente_fornec",dataSource,"R_CLIENTE_FORNECEDOR");
 	}
 
 	public void navegarAteCadastroBanco() {
 		NavegarAte ate = new NavegarAteImplements();
-		ate.navegarAte(mapa, service,"m_cadastro_banco");
+		ate.navegarAte(mapa, service,"m_cadastro_banco",dataSource,"R_BANCO");
 	}
 
 	public void navegarAteCadastroReceita() {
 		NavegarAte ate = new NavegarAteImplements();
-		ate.navegarAte(mapa, service,"m_cadastro_receita");
+		ate.navegarAte(mapa, service,"m_cadastro_receita",dataSource,"R_RECEITA");
 	}
 
 	public void navegarAteCadastroDespesa() {
 		NavegarAte ate = new NavegarAteImplements();
-		ate.navegarAte(mapa, service,"m_cadastro_despesa");
+		ate.navegarAte(mapa, service,"m_cadastro_despesa",dataSource,"R_DESPESA");
 	}
 
 	public void navegarAteCadastroCentroCusto() {
 		NavegarAte ate = new NavegarAteImplements();
-		ate.navegarAte(mapa, service,"m_cadastro_centro_custo");
+		ate.navegarAte(mapa, service,"m_cadastro_centro_custo",dataSource,"R_CENTRO_CUSTO");
 	}
 
 	public void clear(){
@@ -132,6 +149,15 @@ public abstract class AbstractController<T> implements Initializable {
 
 			}
 		});
+	}
+
+	public void imprimir(){
+        RelatorioController controller = new RelatorioController();
+        try {
+        	controller.imprimirRelatorioSemFiltro(dataSource.getConnection(),mapa.get(nmRelatorio));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	public abstract void afterTableView();
