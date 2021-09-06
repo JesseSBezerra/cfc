@@ -24,7 +24,6 @@ public abstract class AbstractController<T> implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		// TODO Auto-generated method stub
-
 	}
 
     public void carregarCrud(CrudRepository<T, Long> crud){
@@ -62,7 +61,7 @@ public abstract class AbstractController<T> implements Initializable {
 
 	@FXML
 	public void cancelar(ActionEvent event) {
-
+      clear();
 	}
 
 	@FXML

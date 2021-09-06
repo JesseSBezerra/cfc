@@ -40,12 +40,6 @@ public class MReceita extends AbstractController<Receita>{
     @FXML
     private TableColumn<Receita, String> tbcDsReceita;
 
-
-    @FXML
-    public void cancelar(ActionEvent event) {
-
-    }
-
     @FXML
     public void salvar(ActionEvent event) {
     	if(objetoSelecionado==null){

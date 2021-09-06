@@ -38,12 +38,6 @@ public class MCentroCusto extends AbstractController<CentroCusto> {
 
 
 	@FXML
-	public void cancelar(ActionEvent event) {
-
-	}
-
-
-	@FXML
 	public void salvar(ActionEvent event) {
         if(objetoSelecionado==null){
         	objetoSelecionado = new CentroCusto();
@@ -87,6 +81,7 @@ public class MCentroCusto extends AbstractController<CentroCusto> {
 		tpSnAtivo.setValue(objetoSelecionado.getSnAtivo());
 		dsCentroCusto.setText(objetoSelecionado.getDsCentroCusto());
 	}
+
 
 
 

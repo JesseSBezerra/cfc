@@ -63,10 +63,6 @@ public class MCadastroBanco extends AbstractController<Banco> implements Initial
 		tblBanco.setItems(populateTableDados);
 	}
 
-	@FXML
-	public void cancelar(ActionEvent event) {
-
-	}
 
 	@Override
 	public void beforeClear() {
@@ -81,5 +77,6 @@ public class MCadastroBanco extends AbstractController<Banco> implements Initial
 		dsCodigoBanco.setText(objetoSelecionado.getDsCodigoBanco());
 
 	}
+
 
 }

@@ -63,12 +63,6 @@ public class MCadastroClienteFornecController extends AbstractController<Cliente
 	private TextField dsObservacao;
 
 	@FXML
-	public void cancelar(ActionEvent event) {
-
-	}
-
-
-	@FXML
 	public void salvar(ActionEvent event) {
        if(objetoSelecionado==null){
     	   objetoSelecionado = new ClienteFornecedor();
@@ -131,5 +125,6 @@ public class MCadastroClienteFornecController extends AbstractController<Cliente
  	   tpClinteFornec.setValue(objetoSelecionado.getTpClienteFornec());
  	   dsObservacao.setText(objetoSelecionado.getDsObservacao());
 	}
+
 
 }

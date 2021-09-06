@@ -41,11 +41,6 @@ public class MDespesa extends AbstractController<Despesa> {
 	@FXML
 	private TableColumn<Despesa, String> tbcDsDespesa;
 
-	@FXML
-	public void cancelar(ActionEvent event) {
-
-	}
-
 
 	@FXML
 	public void salvar(ActionEvent event) {
