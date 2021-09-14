@@ -16,7 +16,8 @@
 <VBox prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.261" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.jdsb.controladores.despesa.MDespesa">
   <children>
 
-<MenuBar VBox.vgrow="NEVER">
+<!--
+    <MenuBar VBox.vgrow="NEVER">
       <menus>
         <Menu mnemonicParsing="false" text="Cadastros">
           <items>
@@ -25,25 +26,35 @@
             <MenuItem mnemonicParsing="false" onAction="#navegarAteCadastroCliente" text="Cadastro Fornecedor / Cliente" />
             <MenuItem mnemonicParsing="false" onAction="#navegarAteCadastroDespesa" text="Cadastro de Despesas" />
             <MenuItem mnemonicParsing="false" onAction="#navegarAteCadastroReceita" text="Cadastro de Receita" />
+            <MenuItem mnemonicParsing="false" onAction="#navegarAteCadastroMeta" text="Cadastro de Metas" />
+
           </items>
         </Menu>
         <Menu mnemonicParsing="false" text="Lançamentos">
           <items>
             <MenuItem mnemonicParsing="false" text="Trasferencia" />
+            <MenuItem mnemonicParsing="false" text="Inventário" onAction="#navegarAteCadastroInventario" />
+            <MenuItem mnemonicParsing="false" text="Receita" onAction="#navegarAteLancamentoReceita" />
+            <MenuItem mnemonicParsing="false" text="Despesa" onAction="#navegarAteLancamentoDespesa" />
           </items>
         </Menu>
         <Menu mnemonicParsing="false" text="Relatórios">
           <items>
             <MenuItem mnemonicParsing="false" text="Trasferencia" />
+             <MenuItem mnemonicParsing="false" text="Lançamentos" onAction="#navegarAteAnaliseMovimento" />
+             <MenuItem mnemonicParsing="false" text="Metas" onAction="#navegarAteAnaliseMetas" />
+             <MenuItem mnemonicParsing="false" text="Fluxo de Caixa" onAction="#navegarAteAnaliseFluxoCaixa" />
           </items>
         </Menu>
         <Menu mnemonicParsing="false" text="Ajuda">
           <items>
             <MenuItem mnemonicParsing="false" text="Sobre o Sistema" />
+            <MenuItem mnemonicParsing="false" text="Principal" onAction="#navegarAtePrincipal" />
           </items>
         </Menu>
       </menus>
     </MenuBar>
+ -->
 
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
          <children>

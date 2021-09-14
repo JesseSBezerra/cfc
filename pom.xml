@@ -6,7 +6,7 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.5.4</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>br.com.jdsb</groupId>
 	<artifactId>cfc</artifactId>
@@ -58,9 +58,15 @@
 		</dependency>
 
 		<dependency>
-		    <groupId>net.sf.jasperreports</groupId>
-		    <artifactId>jasperreports</artifactId>
-		    <version>6.12.2</version>
+			<groupId>com.jfoenix</groupId>
+			<artifactId>jfoenix</artifactId>
+			<version>8.0.10</version>
+		</dependency>
+
+		<dependency>
+			<groupId>net.sf.jasperreports</groupId>
+			<artifactId>jasperreports</artifactId>
+			<version>6.12.2</version>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->

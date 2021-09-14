@@ -10,6 +10,6 @@ import br.com.jdsb.negocio.service.NegocioService;
 
 public interface NavegarAte {
 
-	public void navegarAte( Map<String, Resource> mapa,NegocioService service,String formulario,DataSource dataSource,String nmRelatorio);
+	public void navegarAte( Map<String, Resource> mapa,NegocioService service,String formulario,DataSource dataSource,String nmRelatorio,String nmTela);
 
 }

@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="700.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.301" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.jdsb.controladores.principal.MPrincipal">
+  <children>
+
+    <MenuBar VBox.vgrow="NEVER">
+      <menus>
+       <Menu mnemonicParsing="false" text="DashBoard">
+          <items>
+            <MenuItem mnemonicParsing="false" text="Principal" onAction="#navegarAtePrincipal" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Cadastros">
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#navegarAteCadastroBanco" text="Cadastro Banco" />
+            <MenuItem mnemonicParsing="false" onAction="#navegarAteCadastroCentroCusto" text="Cadastro de Centros de Custo" />
+            <MenuItem mnemonicParsing="false" onAction="#navegarAteCadastroCliente" text="Cadastro Fornecedor / Cliente" />
+            <MenuItem mnemonicParsing="false" onAction="#navegarAteCadastroDespesa" text="Cadastro de Despesas" />
+            <MenuItem mnemonicParsing="false" onAction="#navegarAteCadastroReceita" text="Cadastro de Receita" />
+            <MenuItem mnemonicParsing="false" onAction="#navegarAteCadastroMeta" text="Cadastro de Metas" />
+
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Lançamentos">
+          <items>
+            <MenuItem mnemonicParsing="false" text="Inventário" onAction="#navegarAteCadastroInventario" />
+            <MenuItem mnemonicParsing="false" text="Receita" onAction="#navegarAteLancamentoReceita" />
+            <MenuItem mnemonicParsing="false" text="Despesa" onAction="#navegarAteLancamentoDespesa" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Relatórios">
+          <items>
+             <MenuItem mnemonicParsing="false" text="Lançamentos" onAction="#navegarAteAnaliseMovimento" />
+             <MenuItem mnemonicParsing="false" text="Metas" onAction="#navegarAteAnaliseMetas" />
+             <MenuItem mnemonicParsing="false" text="Fluxo de Caixa" onAction="#navegarAteAnaliseFluxoCaixa" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Ajuda">
+          <items>
+            <MenuItem mnemonicParsing="false" text="Sobre o Sistema" />
+
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+
+      <TabPane prefHeight="673.0" prefWidth="1024.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Analise Mensal">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <BarChart fx:id="barCompartivoMensal" layoutX="14.0" layoutY="356.0" prefHeight="237.0" prefWidth="338.0">
+                          <xAxis>
+                            <CategoryAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </BarChart>
+                        <BarChart fx:id="barLucratividade" layoutX="357.0" layoutY="356.0" prefHeight="237.0" prefWidth="338.0">
+                          <xAxis>
+                            <CategoryAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </BarChart>
+                        <PieChart fx:id="barCentroCusto" layoutX="703.0" layoutY="365.0" prefHeight="213.0" prefWidth="302.0" />
+                        <Label layoutX="31.0" layoutY="244.0" prefHeight="35.0" prefWidth="119.0" text="Receitas">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="56.0" layoutX="31.0" layoutY="271.0" stroke="BLACK" strokeType="INSIDE" width="245.0" />
+                        <Label fx:id="lbValor" layoutX="31.0" layoutY="272.0" prefHeight="54.0" prefWidth="244.0" text="Valor">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                        </Label>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#53c96f" height="25.0" layoutX="31.0" layoutY="327.0" stroke="BLACK" strokeType="INSIDE" width="245.0" />
+                        <Label fx:id="lbRealizado" layoutX="35.0" layoutY="329.0" prefHeight="20.0" prefWidth="153.0" text="Realizado X Meta" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lbRealizadoPercent" layoutX="206.0" layoutY="326.0" prefHeight="25.0" prefWidth="69.0" text="Valor" textAlignment="JUSTIFY" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="282.0" layoutY="244.0" prefHeight="35.0" prefWidth="119.0" text="Despesas">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="56.0" layoutX="282.0" layoutY="271.0" stroke="BLACK" strokeType="INSIDE" width="245.0" />
+                        <Label fx:id="lbValorDespesa" layoutX="282.0" layoutY="272.0" prefHeight="54.0" prefWidth="244.0" text="Valor">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                        </Label>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff2b0f" height="25.0" layoutX="282.0" layoutY="327.0" stroke="BLACK" strokeType="INSIDE" width="245.0" />
+                        <Label fx:id="lbRealizado1" layoutX="286.0" layoutY="329.0" prefHeight="20.0" prefWidth="153.0" text="Realizado X Meta" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lbRealizadoDespesaPercent" layoutX="457.0" layoutY="326.0" prefHeight="25.0" prefWidth="69.0" text="Valor" textAlignment="JUSTIFY" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <LineChart fx:id="chartLinhaDia" layoutX="16.0" layoutY="29.0" prefHeight="213.0" prefWidth="669.0">
+                          <xAxis>
+                            <CategoryAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </LineChart>
+                        <Label layoutX="533.0" layoutY="244.0" prefHeight="35.0" prefWidth="136.0" text="Lucro/Prejuízo">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="56.0" layoutX="533.0" layoutY="271.0" stroke="BLACK" strokeType="INSIDE" width="245.0" />
+                        <Label fx:id="lbValorLucroPrejuizo" layoutX="533.0" layoutY="272.0" prefHeight="54.0" prefWidth="244.0" text="Valor">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                        </Label>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff2b0f" height="25.0" layoutX="533.0" layoutY="327.0" stroke="BLACK" strokeType="INSIDE" width="245.0" />
+                        <Label fx:id="lbRealizado11" layoutX="537.0" layoutY="329.0" prefHeight="20.0" prefWidth="153.0" text="Realizado X Meta" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lbRealizadoLpPercent" layoutX="701.0" layoutY="326.0" prefHeight="25.0" prefWidth="76.0" text="Valor" textAlignment="JUSTIFY" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="732.0" layoutY="29.0" prefHeight="35.0" prefWidth="190.0" text="Meta Mensal Receita">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="56.0" layoutX="732.0" layoutY="56.0" stroke="BLACK" strokeType="INSIDE" width="245.0" />
+                        <Label fx:id="lbVlMetaMesReceita" layoutX="732.0" layoutY="57.0" prefHeight="54.0" prefWidth="244.0" text="Valor">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                        </Label>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#53c96f" height="25.0" layoutX="732.0" layoutY="112.0" stroke="BLACK" strokeType="INSIDE" width="245.0" />
+                        <Label layoutX="732.0" layoutY="137.0" prefHeight="35.0" prefWidth="190.0" text="Meta Mensal Despesa">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="56.0" layoutX="732.0" layoutY="164.0" stroke="BLACK" strokeType="INSIDE" width="245.0" />
+                        <Label fx:id="lbVlMetaMesDespesa" layoutX="732.0" layoutY="165.0" prefHeight="54.0" prefWidth="244.0" text="Valor">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                        </Label>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff2b0f" height="25.0" layoutX="732.0" layoutY="220.0" stroke="BLACK" strokeType="INSIDE" width="245.0" />
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Analise Anual">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+  </children>
+</VBox>

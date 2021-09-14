@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1024.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8.0.301" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.jdsb.controladores.mAnaliseMetas.MAnaliseMetas">
+  <tabs>
+    <Tab text="Metas">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Label layoutX="11.0" layoutY="1.0" prefHeight="27.0" prefWidth="254.0" text="Acompanhamento de Metas">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <ChoiceBox fx:id="tpAnoBase" layoutX="15.0" layoutY="44.0" prefWidth="150.0" />
+                  <Label layoutX="15.0" layoutY="28.0" prefHeight="17.0" prefWidth="152.0" text="Ano Base" />
+                  <TableView fx:id="tblMetas" layoutX="15.0" layoutY="79.0" prefHeight="456.0" prefWidth="991.0">
+                    <columns>
+                      <TableColumn fx:id="tbcDtCompetencia" prefWidth="103.0" text="Competência" />
+                      <TableColumn fx:id="tbcVlMetaReceita" minWidth="3.0" prefWidth="103.0" text="Meta de Receita" />
+                        <TableColumn fx:id="tbcVlReceitaRealizada" minWidth="3.0" prefWidth="103.0" text="Receita Realizada" />
+                        <TableColumn fx:id="tbcVlPercentualDiferencaReceita" minWidth="3.0" prefWidth="75.0" text="\% Diferença" />
+                        <TableColumn fx:id="tbcVlMetaDespesa" minWidth="3.0" prefWidth="130.0" text="Meta de Despesa" />
+                        <TableColumn fx:id="tbcVlDespesaRealizada" minWidth="3.0" prefWidth="109.0" text="Despesa Realizada" />
+                        <TableColumn fx:id="tbcVlPercentualDiferencaDespesa" minWidth="3.0" prefWidth="75.0" text="\% Diferença" />
+                        <TableColumn fx:id="tbcVlMetaResultado" minWidth="3.0" prefWidth="109.0" text="Meta de R." />
+                        <TableColumn fx:id="tbcVlResultadoRealizado" minWidth="3.0" prefWidth="109.0" text="R. Realizado" />
+                        <TableColumn fx:id="tbcVlPercentualDiferencaResultado" minWidth="3.0" prefWidth="76.0" text="Diferença" />
+                    </columns>
+                  </TableView>
+                  <TextField fx:id="vlMetaReceitaTotal" layoutX="19.0" layoutY="580.0" prefHeight="25.0" prefWidth="112.0" />
+                  <Label layoutX="20.0" layoutY="561.0" prefHeight="17.0" prefWidth="110.0" text="Meta Total" />
+                  <TextField fx:id="vlMetaReceitaParcial" layoutX="19.0" layoutY="626.0" prefHeight="25.0" prefWidth="112.0" />
+                  <Label layoutX="20.0" layoutY="607.0" prefHeight="17.0" prefWidth="111.0" text="Meta Parcial" />
+                  <TextField fx:id="vlReceitaTotal" layoutX="139.0" layoutY="580.0" prefHeight="25.0" prefWidth="112.0" />
+                  <Label layoutX="140.0" layoutY="561.0" prefHeight="17.0" prefWidth="110.0" text="Receita. Total" />
+                  <TextField fx:id="vlReceitaParcial" layoutX="139.0" layoutY="626.0" prefHeight="25.0" prefWidth="112.0" />
+                  <Label layoutX="140.0" layoutY="607.0" prefHeight="17.0" prefWidth="111.0" text="Receita Parcial" />
+                  <TextField fx:id="vlPercentualDiferencaReceitaTotal" layoutX="260.0" layoutY="580.0" prefHeight="25.0" prefWidth="112.0" />
+                  <Label layoutX="261.0" layoutY="561.0" prefHeight="17.0" prefWidth="110.0" text="\% Diferenta Total" />
+                  <TextField fx:id="vlPercentualDiferencaReceitaParcial" layoutX="260.0" layoutY="626.0" prefHeight="25.0" prefWidth="112.0" />
+                  <Label layoutX="261.0" layoutY="607.0" prefHeight="17.0" prefWidth="111.0" text="\% Diferenta Parcial" />
+                  <Line endX="180.0" layoutX="196.0" layoutY="552.0" startX="-78.0" strokeWidth="0.25" />
+                  <Line endX="180.0" layoutX="197.0" layoutY="658.0" startX="-180.5" startY="-0.5" strokeWidth="0.25" />
+                  <Line endX="-100.0" endY="72.0" layoutX="477.0" layoutY="585.0" startX="-100.0" startY="-33.0" strokeWidth="0.25" />
+                  <Line endX="-100.0" endY="72.0" layoutX="116.0" layoutY="585.0" startX="-100.0" startY="-31.0" strokeWidth="0.25" />
+                  <Label layoutX="14.0" layoutY="540.0" prefHeight="17.0" prefWidth="100.0" text="Metas de Receita" />
+                  <TextField fx:id="vlMetaDespesaTotal" layoutX="388.0" layoutY="580.0" prefHeight="25.0" prefWidth="112.0" />
+                  <Label layoutX="389.0" layoutY="561.0" prefHeight="17.0" prefWidth="110.0" text="Meta Total" />
+                  <TextField fx:id="vlMetaDespesaParcial" layoutX="388.0" layoutY="626.0" prefHeight="25.0" prefWidth="112.0" />
+                  <Label layoutX="389.0" layoutY="607.0" prefHeight="17.0" prefWidth="111.0" text="Meta Parcial" />
+                  <TextField fx:id="vlDespesaTotal" layoutX="508.0" layoutY="580.0" prefHeight="25.0" prefWidth="112.0" />
+                  <Label layoutX="509.0" layoutY="561.0" prefHeight="17.0" prefWidth="110.0" text="Despesa. Total" />
+                  <TextField fx:id="vlDespesaParcial" layoutX="508.0" layoutY="626.0" prefHeight="25.0" prefWidth="112.0" />
+                  <Label layoutX="509.0" layoutY="607.0" prefHeight="17.0" prefWidth="111.0" text="Despesa Parcial" />
+                  <TextField fx:id="vlPercentualDiferencaDespesaTotal" layoutX="629.0" layoutY="580.0" prefHeight="25.0" prefWidth="112.0" />
+                  <Label layoutX="630.0" layoutY="561.0" prefHeight="17.0" prefWidth="110.0" text="\% Diferenta Total" />
+                  <TextField fx:id="vlPercentualDiferencaDespesaParcial" layoutX="632.0" layoutY="626.0" prefHeight="25.0" prefWidth="112.0" />
+                  <Label layoutX="630.0" layoutY="607.0" prefHeight="17.0" prefWidth="111.0" text="\% Diferenta Parcial" />
+                  <Line endX="180.0" layoutX="565.0" layoutY="552.0" startX="-78.0" strokeWidth="0.25" />
+                  <Line endX="180.0" layoutX="566.0" layoutY="658.0" startX="-180.5" startY="-0.5" strokeWidth="0.25" />
+                  <Line endX="-100.0" endY="72.0" layoutX="485.0" layoutY="585.0" startX="-100.0" startY="-31.0" strokeWidth="0.25" />
+                  <Label layoutX="383.0" layoutY="540.0" prefHeight="17.0" prefWidth="100.0" text="Metas de Despesa" />
+                  <Line endX="-100.0" endY="72.0" layoutX="846.0" layoutY="585.0" startX="-100.0" startY="-33.0" strokeWidth="0.25" />
+                  <TextField fx:id="vlMetaResultadoTotal" layoutX="760.0" layoutY="580.0" prefHeight="25.0" prefWidth="112.0" />
+                  <Label layoutX="761.0" layoutY="561.0" prefHeight="17.0" prefWidth="110.0" text="Meta Total" />
+                  <Label layoutX="761.0" layoutY="607.0" prefHeight="17.0" prefWidth="111.0" text="Meta Parcial" />
+                  <TextField fx:id="vlResultadoTotal" layoutX="877.0" layoutY="580.0" prefHeight="25.0" prefWidth="112.0" />
+                  <Label layoutX="878.0" layoutY="561.0" prefHeight="17.0" prefWidth="110.0" text="Resultado.Total" />
+                  <TextField fx:id="vlResultadoParcial" layoutX="877.0" layoutY="626.0" prefHeight="25.0" prefWidth="112.0" />
+                  <Label layoutX="878.0" layoutY="607.0" prefHeight="17.0" prefWidth="111.0" text="Resultado Parcial" />
+                  <Line endX="180.0" layoutX="823.0" layoutY="552.0" startX="41.0" strokeWidth="0.25" />
+                  <Line endX="180.0" layoutX="824.0" layoutY="658.0" startX="-67.0" strokeWidth="0.25" />
+                  <Line endX="-100.0" endY="72.0" layoutX="857.0" layoutY="585.0" startX="-100.0" startY="-31.0" strokeWidth="0.25" />
+                  <Label layoutX="756.0" layoutY="540.0" prefHeight="17.0" prefWidth="111.0" text="Metas de Resultado" />
+                  <Line endX="-100.0" endY="72.0" layoutX="1104.0" layoutY="585.0" startX="-100.0" startY="-33.0" strokeWidth="0.25" />
+                  <TextField fx:id="vlMetaResultadoParcial" layoutX="760.0" layoutY="626.0" prefHeight="25.0" prefWidth="112.0" />
+               </children></AnchorPane>
+      </content>
+    </Tab>
+    <Tab text="Analise">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Label layoutX="11.0" layoutY="1.0" prefHeight="27.0" prefWidth="333.0" text="Planejamento Financeiro">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <TableView fx:id="tblPlanejamentoFinanceiro" layoutX="11.0" layoutY="34.0" prefHeight="287.0" prefWidth="997.0">
+                    <columns>
+                      <TableColumn fx:id="tbcPaDsMovimento" prefWidth="136.0" text="Descrição" />
+                        <TableColumn fx:id="tbcPaMetaTotal" prefWidth="136.0" text="Meta Total" />
+                        <TableColumn fx:id="tbcPaMetaRealizada" prefWidth="131.0" text="Meta Realizada" />
+                        <TableColumn fx:id="tbcPaPercentualDiferenca" prefWidth="114.0" text="\% Realizado/Meta" />
+                        <TableColumn fx:id="tbcPaDsMargemErro" prefWidth="114.0" text="Margem de Erro" />
+                        <TableColumn fx:id="tbcPaDsOrientacao" prefWidth="364.0" text="Orientações" />
+                    </columns>
+                  </TableView>
+                  <Label fx:id="lbAnoBase" layoutX="224.0" layoutY="1.0" prefHeight="17.0" prefWidth="192.0">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+               </children></AnchorPane>
+      </content>
+    </Tab>
+  </tabs>
+</TabPane>

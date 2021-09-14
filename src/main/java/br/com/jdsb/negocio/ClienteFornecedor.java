@@ -9,7 +9,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="CLIENTE_FORNECEDOR")
-public class ClienteFornecedor {
+public class ClienteFornecedor implements Comparable<ClienteFornecedor>{
 
 	@Id
 	@Column(name="CD_CLIENTE_FORNECEDOR")
@@ -100,6 +100,46 @@ public class ClienteFornecedor {
 	public void setDsObservacao(String dsObservacao) {
 		this.dsObservacao = dsObservacao;
 	}
+
+	@Override
+	public String toString() {
+		return nmClienteFornec;
+	}
+
+	@Override
+	public int compareTo(ClienteFornecedor o) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((cdClienteFornecedor == null) ? 0 : cdClienteFornecedor.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		ClienteFornecedor other = (ClienteFornecedor) obj;
+		if (cdClienteFornecedor == null) {
+			if (other.cdClienteFornecedor != null)
+				return false;
+		} else if (!cdClienteFornecedor.equals(other.cdClienteFornecedor))
+			return false;
+		return true;
+	}
+
+
+
+
 
 
 

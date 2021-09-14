@@ -9,7 +9,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="DESPESA")
-public class Despesa {
+public class Despesa implements Comparable<Despesa>{
 
 	@Id
 	@Column(name="CD_DESPESA")
@@ -44,6 +44,42 @@ public class Despesa {
 
 	public void setTpDespesa(String tpDespesa) {
 		this.tpDespesa = tpDespesa;
+	}
+
+	@Override
+	public int compareTo(Despesa o) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public String toString() {
+		return dsDespesa;
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((cdDespesa == null) ? 0 : cdDespesa.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Despesa other = (Despesa) obj;
+		if (cdDespesa == null) {
+			if (other.cdDespesa != null)
+				return false;
+		} else if (!cdDespesa.equals(other.cdDespesa))
+			return false;
+		return true;
 	}
 
 

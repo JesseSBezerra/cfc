@@ -2,10 +2,14 @@ package br.com.jdsb.controladores.clienteFornecedor;
 
 import br.com.jdsb.cfc.AbstractController;
 import br.com.jdsb.negocio.ClienteFornecedor;
+import br.com.jdsb.negocio.infra.Mascaras;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
@@ -23,6 +27,22 @@ public class MCadastroClienteFornecController extends AbstractController<Cliente
 	    carregarDados();
 	    carregarCrud(service.getClientFornecDao());
 	    preencherTabelaTela(tblcClineteFornec);
+	    Mascaras.mascaraCPF(cpfCnpj);
+
+	    snCnpj.selectedProperty().addListener(new ChangeListener<Boolean>() {
+	        @Override
+	        public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
+	        	if(newValue){
+	        		Mascaras.mascaraCNPJ(cpfCnpj);
+	        	}else{
+	        		Mascaras.mascaraCPF(cpfCnpj);
+	        	}
+	        }
+	    });
+
+	    Mascaras.mascaraTelefone(dsCelular);
+	    Mascaras.mascaraTelefone(dsTelFixo);
+	    Mascaras.mascaraEmail(dsEmail);
 
 	}
 
@@ -46,6 +66,9 @@ public class MCadastroClienteFornecController extends AbstractController<Cliente
 
 	@FXML
 	private TextField dsEmail;
+
+    @FXML
+    private CheckBox snCnpj;
 
 	@FXML
 	private TableColumn<ClienteFornecedor, String> tbcTpClienteFornec;
